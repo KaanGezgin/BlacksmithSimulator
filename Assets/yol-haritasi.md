@@ -17,11 +17,11 @@ Bu dosya projenin zaman çizelgesini ve milestone'larını tutar.
 - [x] VoxelData (yoğunluk alanı, deformasyon) — Oturum 1
 - [x] Chunk (GameObject + Mesh + Collider) — Oturum 2
 - [x] ChunkManager (dirty tracking, mesh regenerasyonu) — Oturum 2
-- [ ] MarchingCubesGenerator (algoritmanın kalbi)
-- [ ] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor)
+- [x] MarchingCubesGenerator (algoritmanın kalbi) — Oturum 4
+- [x] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor) — Oturum 3
 - [ ] ForgeBlock (facade + mouse input)
 - [ ] Unity'de test ve doğrulama
-- [ ] TriTable tam 256 satırın eklenmesi
+- [x] TriTable tam 256 satırın eklenmesi — Oturum 3
 - [ ] Smooth normals (polish)
 - [ ] Performans profili kontrolü
 
