@@ -31,6 +31,7 @@ namespace Forge.Core
 
         // Reused per-regeneration buffers to avoid per-frame GC allocations.
         private readonly List<Vector3> _vertices = new();
+        private readonly List<Vector3> _normals = new();
         private readonly List<int> _triangles = new();
 
         public ChunkManager(VoxelData voxels, Transform parent, Material material)
@@ -81,8 +82,8 @@ namespace Forge.Core
 
             foreach (var chunk in _dirty)
             {
-                _generator.Generate(Voxels, chunk.Coord, ChunkSize, _vertices, _triangles);
-                chunk.ApplyMesh(_vertices, _triangles);
+                _generator.Generate(Voxels, chunk.Coord, ChunkSize, _vertices, _normals, _triangles);
+                chunk.ApplyMesh(_vertices, _normals, _triangles);
             }
             _dirty.Clear();
         }

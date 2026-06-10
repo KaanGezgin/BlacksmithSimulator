@@ -5,13 +5,14 @@ Portfolio/showcase kapsamı, ~6 hafta, solo geliştirici.
 
 ## Her oturumda önce bunları oku (kaynak gerçekler)
 
-Bu `.md` dosyaları projenin hafızasıdır; kod yazmadan önce ilgili olanları oku:
+Bu `.md` dosyaları projenin hafızasıdır (hepsi `Assets/Documantations/`
+altında); kod yazmadan önce ilgili olanları oku:
 
-- `Assets/proje-talimatlari.md` — rol, çalışma tarzı, kapsam kuralları
-- `Assets/kararlar.md` — verilmiş tüm mimari kararlar + gerekçeleri (kilitli sözleşmeler)
-- `Assets/teknik-stack.md` — araçlar, sürümler, klasör yapısı, referanslar
-- `Assets/yol-haritasi.md` — milestone'lar ve görev ilerlemesi (resume sinyali)
-- `Assets/hafta1-oturum-plani.md` — Hafta 1'in token-bütçeli oturum bölümlemesi
+- `Assets/Documantations/proje-talimatlari.md` — rol, çalışma tarzı, kapsam kuralları
+- `Assets/Documantations/kararlar.md` — verilmiş tüm mimari kararlar + gerekçeleri (kilitli sözleşmeler)
+- `Assets/Documantations/teknik-stack.md` — araçlar, sürümler, klasör yapısı, referanslar
+- `Assets/Documantations/yol-haritasi.md` — milestone'lar ve görev ilerlemesi (resume sinyali)
+- `Assets/Documantations/hafta1-oturum-plani.md` — Hafta 1'in token-bütçeli oturum bölümlemesi
 
 Bir karar değişirse ilgili `.md` güncellenir.
 
@@ -21,9 +22,9 @@ Hafta 1, kullanım limitine (5 saat/genel) görev ortasında takılmamak için
 **token-bütçeli oturumlara** bölündü. Kullanıcı *"Oturum N'e başlıyoruz"*
 dediğinde:
 
-1. `Assets/hafta1-oturum-plani.md`'yi aç, Oturum N'in kapsamını oku.
-2. `Assets/yol-haritasi.md`'den nerede kalındığını ve `Assets/kararlar.md`'den
-   ilgili kilitli kararları doğrula.
+1. `Assets/Documantations/hafta1-oturum-plani.md`'yi aç, Oturum N'in kapsamını oku.
+2. `Assets/Documantations/yol-haritasi.md`'den nerede kalındığını ve
+   `Assets/Documantations/kararlar.md`'den ilgili kilitli kararları doğrula.
 3. Sadece **o oturumun kapsamını** yap. Erken biterse sonrakine geçme — bilinçli
    dur, limit penceresini koru.
 4. Oturum bitince `yol-haritasi.md`'deki ilgili görevleri `[x]` işaretle
@@ -51,10 +52,20 @@ dediğinde:
   eşleme, regen orkestrasyonu. ChunkSize = 8 hücre.
 - `MarchingCubes/MarchingCubesGenerator` — chunk yoğunluğundan mesh üretir.
   Sözleşme: `Generate(VoxelData, chunkCoord, chunkSize, List<Vector3> vertices,
-  List<int> triangles)`, vertex'ler chunk-local.
-- `MarchingCubes/MarchingCubesTables` — EdgeTable + TriTable sabitleri.
-- `ForgeBlock` (facade, tek MonoBehaviour) — hepsini bağlar + mouse/raycast input,
-  world↔local transform.
+  List<Vector3> normals, List<int> triangles)`, vertex'ler chunk-local. Cube-index
+  biti solid köşede (density ≥ iso) set edilir → Unity winding'inde dışa-bakan
+  yüzler. Normaller yoğunluk gradyanından (merkezi fark, `-gradient`) gelir;
+  welding yok, chunk sınırları dikişsiz (smooth — Oturum 6).
+- `MarchingCubes/MarchingCubesTables` — EdgeTable + TriTable + CornerOffsets (8) +
+  EdgeConnections (12) sabitleri (Paul Bourke konvansiyonu).
+- `ForgeBlock` (facade, tek MonoBehaviour) — hepsini bağlar + mouse/raycast input
+  (eski/yeni Input System ikisinde de çalışır, `#if ENABLE_INPUT_SYSTEM`),
+  world↔local transform (`InverseTransformPoint`). Tüm input için tek giriş:
+  `DeformAt(worldPoint)` — Hafta 2'de VR çekiç aynı metodu çağıracak.
 
 Blok: 32×16×32 hücre (= 33×17×33 nokta) = 4×2×4 chunk. Chunk overlap: her chunk
 8 hücre işler, 9 nokta okur; sınır noktası komşuyla paylaşılır (dikiş önleme).
+
+**Hafta 1 durumu:** Çekirdek tamam (Oturum 1–6). Mouse ile deformasyon çalışıyor,
+smooth normaller dikişsiz, profiler'da ForgeBlock.Update ~0 ms / 0 B GC. Sıradaki:
+Hafta 2 (VR entegrasyonu).

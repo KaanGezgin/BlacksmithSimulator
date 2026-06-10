@@ -23,6 +23,9 @@
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
 
+# Profiler captures can be hundreds of MB (exceed GitHub's 100 MB limit)
+/[Pp]rofilerCaptures/
+
 # Recordings can get excessive in size
 /[Rr]ecordings/
 

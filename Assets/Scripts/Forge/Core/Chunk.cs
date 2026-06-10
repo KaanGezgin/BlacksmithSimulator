@@ -51,12 +51,12 @@ namespace Forge.Core
         /// Uploads freshly generated geometry to the mesh and collider. The lists
         /// are owned by the caller (ChunkManager) and reused across chunks.
         /// </summary>
-        public void ApplyMesh(List<Vector3> vertices, List<int> triangles)
+        public void ApplyMesh(List<Vector3> vertices, List<Vector3> normals, List<int> triangles)
         {
             _mesh.Clear();
             _mesh.SetVertices(vertices);
             _mesh.SetTriangles(triangles, 0);
-            _mesh.RecalculateNormals(); // smooth normals are an Oturum 6 polish item
+            _mesh.SetNormals(normals); // gradient-based smooth normals from the generator (Oturum 6)
             _mesh.RecalculateBounds();
 
             // The MeshCollider must be re-assigned to re-cook collision data.

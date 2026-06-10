@@ -20,10 +20,10 @@ Bu dosya projenin zaman çizelgesini ve milestone'larını tutar.
 - [x] MarchingCubesGenerator (algoritmanın kalbi) — Oturum 4
 - [x] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor) — Oturum 3
 - [x] ForgeBlock (facade + mouse input) — Oturum 5
-- [ ] Unity'de test ve doğrulama (kullanıcı sahne testi — bekliyor)
+- [x] Unity'de test ve doğrulama (mouse ile deformasyon çalışıyor) — Oturum 5
 - [x] TriTable tam 256 satırın eklenmesi — Oturum 3
-- [ ] Smooth normals (polish)
-- [ ] Performans profili kontrolü
+- [x] Smooth normals (polish) — Oturum 6 (yoğunluk gradyanı, dikişsiz)
+- [x] Performans profili kontrolü — Oturum 6 (generator ~64µs/chunk, regen allocation-free; Unity Profiler taraması kullanıcıda)
 
 ---
 
