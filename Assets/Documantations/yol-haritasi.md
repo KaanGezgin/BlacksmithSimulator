@@ -19,8 +19,8 @@ Bu dosya projenin zaman çizelgesini ve milestone'larını tutar.
 - [x] ChunkManager (dirty tracking, mesh regenerasyonu) — Oturum 2
 - [x] MarchingCubesGenerator (algoritmanın kalbi) — Oturum 4
 - [x] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor) — Oturum 3
-- [ ] ForgeBlock (facade + mouse input)
-- [ ] Unity'de test ve doğrulama
+- [x] ForgeBlock (facade + mouse input) — Oturum 5
+- [ ] Unity'de test ve doğrulama (kullanıcı sahne testi — bekliyor)
 - [x] TriTable tam 256 satırın eklenmesi — Oturum 3
 - [ ] Smooth normals (polish)
 - [ ] Performans profili kontrolü
