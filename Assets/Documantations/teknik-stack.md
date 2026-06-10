@@ -14,9 +14,10 @@ Stack değiştiğinde güncellenip yeniden yüklenmelidir.
 
 ## VR Eklentileri
 
-- **XR Interaction Toolkit** (Unity resmi)
+- **XR Interaction Toolkit** (Unity resmi) — native grab (`XRGrabInteractable` + Velocity Tracking)
 - **OpenXR Plugin** (Unity resmi — SteamVR/Oculus/diğer cihazlar için)
-- **Auto Hand** — Fiziksel el etkileşimleri (çekiç tutma, kavrama)
+- **Hedef cihaz:** Meta Quest (PC'ye Link / Air Link), OpenXR **Oculus Touch** controller profili
+- ~~Auto Hand~~ — düşürüldü (2026-06-10, maliyet ~$90; bkz. `kararlar.md`). Fiziksel el yerine XRI native grab; eller basit görsel.
 
 ---
 

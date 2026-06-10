@@ -60,17 +60,21 @@ Yeni bir karar verildiğinde bu dosya güncellenir ve projeye yeniden yüklenir.
 
 ## VR Framework
 
-**Karar:** XR Interaction Toolkit + Auto Hand
-**Tarih:** Proje başlangıcı
+**Karar:** XR Interaction Toolkit (native grab — `XRGrabInteractable` + Velocity Tracking)
+**Tarih:** Proje başlangıcı (Auto Hand kararı **2026-06-10**'da revize edildi)
 
 **Gerekçe:**
-- XRI: Unity'nin resmi çözümü, OpenXR üzerinden tüm cihazları destekler, sürekli güncel
-- Auto Hand: Fiziksel el etkileşimleri için neredeyse standart; çekiç tutmak/sallamak/maşa kavramak gibi mekanikler için ideal
-- Demir dövmenin fiziksel doğası Auto Hand'in güçlü olduğu alana denk düşüyor
+- XRI: Unity'nin resmi çözümü, OpenXR üzerinden tüm cihazları destekler, sürekli güncel, **ücretsiz**
+- Dövme mekaniği için gereken tek şey çekici tutup **fiziksel hızla** bloğa vurmak. XRI'nin Velocity Tracking grab'i tutulan nesneyi fizikle hareket ettirir → çarpışma hızı (`relativeVelocity`) ölçülüp `ForgeBlock.DeformAt()` üzerinden deformasyona haritalanır. Mekaniğin tam karşılığı.
+- Eller fiziksel parmak etkileşimi değil, basit **görsel** (controller/el modeli) olarak yeterli.
 
-**Reddedilen Alternatif:** VRIF (VR Interaction Framework)
-- Daha kapsamlı ama lisanslı/ücretli
-- Solo portfolio projesi için açık/ücretsiz çözümler tercih edildi
+**Reddedilen Alternatif 1:** Auto Hand (önceki karar — **2026-06-10'da düşürüldü**)
+- Fiziksel el (parmak sarma/itme) güçlü ama dövme için gereksiz; asıl ihtiyaç çekiç-impact, onu XRI zaten karşılıyor
+- ~$90 maliyet, solo/portfolio bütçesi için gereksiz harcama
+- İleride maşayla küçük parça tutma gibi fiziksel-el ihtiyacı doğarsa yeniden değerlendirilir (ücretsiz/açık-kaynak öncelik)
+
+**Reddedilen Alternatif 2:** VRIF / Hurricane VR
+- Daha kapsamlı ama lisanslı/ücretli; XRI ücretsiz ve prototip için yeterli
 
 ---
 

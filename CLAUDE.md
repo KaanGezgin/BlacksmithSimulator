@@ -12,26 +12,28 @@ altında); kod yazmadan önce ilgili olanları oku:
 - `Assets/Documantations/kararlar.md` — verilmiş tüm mimari kararlar + gerekçeleri (kilitli sözleşmeler)
 - `Assets/Documantations/teknik-stack.md` — araçlar, sürümler, klasör yapısı, referanslar
 - `Assets/Documantations/yol-haritasi.md` — milestone'lar ve görev ilerlemesi (resume sinyali)
-- `Assets/Documantations/hafta1-oturum-plani.md` — Hafta 1'in token-bütçeli oturum bölümlemesi
+- `Assets/Documantations/hafta1-oturum-plani.md` — Hafta 1'in token-bütçeli oturum bölümlemesi (tamamlandı)
+- `Assets/Documantations/hafta2-oturum-plani.md` — Hafta 2'nin (VR) token-bütçeli oturum bölümlemesi
 
 Bir karar değişirse ilgili `.md` güncellenir.
 
 ## Oturum protokolü (ÖNEMLİ)
 
-Hafta 1, kullanım limitine (5 saat/genel) görev ortasında takılmamak için
-**token-bütçeli oturumlara** bölündü. Kullanıcı *"Oturum N'e başlıyoruz"*
+Her hafta, kullanım limitine (5 saat/genel) görev ortasında takılmamak için
+**token-bütçeli oturumlara** bölündü. Kullanıcı *"Hafta H Oturum N'e başlıyoruz"*
 dediğinde:
 
-1. `Assets/Documantations/hafta1-oturum-plani.md`'yi aç, Oturum N'in kapsamını oku.
+1. O haftanın plan dosyasını aç (`Assets/Documantations/haftaH-oturum-plani.md`),
+   Oturum N'in kapsamını oku.
 2. `Assets/Documantations/yol-haritasi.md`'den nerede kalındığını ve
    `Assets/Documantations/kararlar.md`'den ilgili kilitli kararları doğrula.
 3. Sadece **o oturumun kapsamını** yap. Erken biterse sonrakine geçme — bilinçli
    dur, limit penceresini koru.
 4. Oturum bitince `yol-haritasi.md`'deki ilgili görevleri `[x]` işaretle
    ("— Oturum N" notuyla). Bu, sonraki pencerenin resume sinyalidir.
-5. **Oturum 3 (MC tabloları) ve Oturum 4 (generator) asla birleştirilmez** —
-   ikisi de ağır. TriTable sabittir; sıfırdan üretme, güvenilir referanstan
-   (Paul Bourke / Sebastian Lague MIT) al.
+5. **Plan dosyasında 🔴/izole işaretli ağır oturumlar asla birleştirilmez**
+   (her hafta planı bunları kendi içinde işaretler). Sabit/bilinen veri (ör.
+   TriTable) ve hazır asset'ler sıfırdan üretilmez; güvenilir referanstan alınır.
 
 ## Çalışma tarzı
 
