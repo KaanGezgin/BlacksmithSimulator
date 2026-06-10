@@ -13,13 +13,13 @@ Bu dosya projenin zaman çizelgesini ve milestone'larını tutar.
 - Chunk sistemi çalışıyor, sadece etkilenen chunk'lar yeniden hesaplanıyor
 
 ### Görevler
-- [x] Mimari tasarım (sınıf sorumlulukları, veri akışı)
-- [x] VoxelData (yoğunluk alanı, deformasyon)
-- [x] Chunk (GameObject + Mesh + Collider)
-- [x] ChunkManager (dirty tracking, mesh regenerasyonu)
-- [x] MarchingCubesGenerator (algoritmanın kalbi)
-- [x] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor)
-- [x] ForgeBlock (facade + mouse input)
+- [x] Mimari tasarım (sınıf sorumlulukları, veri akışı) — Oturum 1
+- [x] VoxelData (yoğunluk alanı, deformasyon) — Oturum 1
+- [x] Chunk (GameObject + Mesh + Collider) — Oturum 2
+- [x] ChunkManager (dirty tracking, mesh regenerasyonu) — Oturum 2
+- [ ] MarchingCubesGenerator (algoritmanın kalbi)
+- [ ] MarchingCubesTables (lookup tabloları — TriTable tamamlanması gerekiyor)
+- [ ] ForgeBlock (facade + mouse input)
 - [ ] Unity'de test ve doğrulama
 - [ ] TriTable tam 256 satırın eklenmesi
 - [ ] Smooth normals (polish)
